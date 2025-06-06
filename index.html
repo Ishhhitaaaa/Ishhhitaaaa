@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desi Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Playfair+Display&family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Desi Cafe</div>
+<div class="hamburger" 
+id="hamburger">☰</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Experience Coffee with a Desi Twist</h1>
+      <a href="#menu" class="cta-button">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <h2>Our Signature Brews</h2>
+    <div class="menu-grid">
+      <!-- Example coffee item card (repeat for 12 types) -->
+      <div class="menu-card" data-coffee="1">
+        <img src="placeholder.jpg" alt="Desi Coffee" />
+        <h3>Masala Chai Latte</h3>
+      </div>
+      <!-- More cards will be added here... -->
+    </div>
+  </section>
+
+  <!-- Modal (hidden by default) -->
+  <div id="menu-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3 id="modal-title">Coffee Name</h3>
+      <p id="modal-description">Short description about the selected coffee.</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>Desi Cafe blends traditional Indian warmth with globally loved brews. We serve premium coffee in terracotta cups, bringing rustic charm to every sip.</p>
+      <img src="desi-coffee-stall.jpg" alt="Desi Coffee Stall" />
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>📞 9339785405</p>
+      <p>📧 dasishita0510@gmail.com</p>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Desi Cafe. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#"><img src="instagram-icon.svg" alt="Instagram" /></a>
+      <a href="#"><img src="facebook-icon.svg" alt="Facebook" /></a>
+      <a href="#"><img src="twitter-icon.svg" alt="Twitter" /></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  
+  <!-- Optional: Auto-fill current time (in JS) -->
+  <input type="hidden" name="time" id="time">
+
+  <input type="email" name="reply_to" placeholder="Your Email" required>
+  
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit" class="btn">Send Message</button>
+        </form>
