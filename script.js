@@ -1,4 +1,4 @@
-// Smooth scroll for anchor links
+// 🌐 Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -8,20 +8,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Modal for menu items
+// 📦 Modal for menu items
 const menuCards = document.querySelectorAll('.menu-card');
 const modal = document.getElementById('menu-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-description');
 const closeBtn = document.querySelector('.close-button');
 
-// Sample descriptions (add all 12 as needed)
 const coffeeDescriptions = {
   1: {
     title: "Masala Chai Latte",
     desc: "A spiced fusion of black tea, milk, and Indian masalas for a warm kick."
   },
-  // Add coffeeDescriptions[2], [3], ..., [12] here
+  // You can add more descriptions like [2], [3], etc.
 };
 
 menuCards.forEach(card => {
@@ -48,7 +47,7 @@ window.addEventListener('click', e => {
   }
 });
 
-// Scroll animation for menu cards
+// 💫 Scroll animation for menu cards
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -62,31 +61,37 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.menu-card').forEach(card => {
   observer.observe(card);
 });
+
+// 🍔 Hamburger toggle for mobile
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
-// ✅ Initialize EmailJS with your public key
-emailjs.init("PsISJI0Nr_nRNKiiv");
 
-// ✅ Handle contact form submission
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent default form submission
+// ✅ EmailJS Integration
+(function () {
+  emailjs.init("PsISJI0Nr_nRNKiiv"); // Your Public Key
+})();
 
-  emailjs.sendForm('service_hn6xfod', 'template_f1atZrn', this)
-    .then(() => {
-      alert("Message sent successfully! ☕️ We’ll get back to you soon.");
-      this.reset(); // Clear the form after sending
-    }, (error) => {
+// ⏰ Auto-fill time field on page load
+document.addEventListener("DOMContentLoaded", function () {
+  const now = new Date();
+  const formattedTime = now.toLocaleString();
+  document.getElementById("time").value = formattedTime;
+});
+
+// 📤 Handle contact form submission
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_hn6xfod", "template_f1atZrn", this)
+    .then(function () {
+      alert("Message sent successfully! ☕️");
+      document.getElementById("contact-form").reset();
+    }, function (error) {
+      console.error("Failed to send:", error);
       alert("Failed to send message. Please try again later.");
-      console.error("EmailJS Error:", error);
     });
 });
-const options = { 
-  year: 'numeric', month: 'long', day: 'numeric', 
-  hour: 'numeric', minute: 'numeric', hour12: true 
-};
-document.getElementById('time').value = now.toLocaleString('en-US', options);"
-    
