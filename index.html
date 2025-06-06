@@ -6,14 +6,15 @@
   <title>Desi Cafe</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Playfair+Display&family=Merriweather&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Desi Cafe</div>
-<div class="hamburger" 
-id="hamburger">☰</div>
+    <div class="hamburger" id="hamburger">☰</div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#menu">Menu</a></li>
@@ -34,16 +35,15 @@ id="hamburger">☰</div>
   <section id="menu" class="menu-section">
     <h2>Our Signature Brews</h2>
     <div class="menu-grid">
-      <!-- Example coffee item card (repeat for 12 types) -->
-      <div class="menu-card" data-coffee="1">
+      <div class="menu-card">
         <img src="placeholder.jpg" alt="Desi Coffee" />
         <h3>Masala Chai Latte</h3>
       </div>
-      <!-- More cards will be added here... -->
+      <!-- More menu cards to come -->
     </div>
   </section>
 
-  <!-- Modal (hidden by default) -->
+  <!-- Modal -->
   <div id="menu-modal" class="modal">
     <div class="modal-content">
       <span class="close-button">&times;</span>
@@ -68,11 +68,12 @@ id="hamburger">☰</div>
       <p>📞 9339785405</p>
       <p>📧 dasishita0510@gmail.com</p>
     </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="hidden" name="time" id="time" />
+      <input type="email" name="reply_to" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
@@ -86,18 +87,7 @@ id="hamburger">☰</div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Your Name" required>
-  
-  <!-- Optional: Auto-fill current time (in JS) -->
-  <input type="hidden" name="time" id="time">
-
-  <input type="email" name="reply_to" placeholder="Your Email" required>
-  
-  <textarea name="message" placeholder="Your Message" required></textarea>
-
-  <button type="submit" class="btn">Send Message</button>
-        </form>
